@@ -24,11 +24,11 @@
             <div class="col-md-2 col-md-offset-5">
                 <h3>New Account Page</h3>
                 <br/>
-                <form action="">
+                <form id="new-user-form" action="">
                         <label for="">Email</label>
-                        <input type="text" class="form-control" name="email" placeholder="Enter your email">
+                        <input id="email" type="text" class="form-control" name="email" placeholder="Enter your email">
                         <label for="">Password</label>
-                        <input type="text" class="form-control" placeholder="Enter your password...">
+                        <input id="password" type="text" class="form-control" placeholder="Enter your password...">
                         <div>
                             <a href="#">Already have an account? Login here.</a>
                         </div>
@@ -43,11 +43,21 @@
             
         </div>
     </div>
+
+    <!-- jquery  -->
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
     
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
     <script src="//unpkg.com/@feathersjs/client@^3.0.0/dist/feathers.js"></script>
     <script src="//unpkg.com/socket.io-client@1.7.3/dist/socket.io.js"></script>
+
+    <!-- custom script  -->
+
+    <script src="./js/account.js"></script>
     
 </body>
 </html>
