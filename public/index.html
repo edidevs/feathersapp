@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat Application</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+</head>
+<body>
+    
+    <div class="container">
+      <div class="row">
+        <div class="pull-right">
+          <span id="logout-icon"><i class="fas fa-sign-out-alt"></i></span>
+        </div>
+      </div>
+      <div class="row">
+          <div class="app-title">
+              <h2 class="center-text">Feathers Chat Application</h2>
+          </div>
+      </div>
+      <div class="row">
+        <!-- left content area -->
+        <div class="col-md-3 margin-top">
+          <div class="media">
+            <div class="media-left media-middle">
+              <a href="#">
+                <img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Users-User-icon.png" alt="32x32 user image" class="media-object" style="width:32px; height:32px;">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4>John Doe</h4>
+            </div>
+          </div>
+          <div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Users-User-icon.png" alt="32x32 user image" class="media-object" style="width:32px; height:32px;">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4>John Doe</h4>
+              </div>
+            </div>
+        </div>
+        <!-- left content area -->
+
+
+        <!-- Right content area -->
+        <div class="col-md-9 margin-top main-border">
+          <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Users-User-icon.png" alt="32x32 user image" class="media-object" style="width:32px; height:32px;">
+                </a>
+            </div>
+            <div class="media-body">
+              <div class="pull-right">
+                <span class="delete-comment"><i class="fas fa-times" aria-hidden="true"></i></span>
+              </div>
+              <h4 class="media-heading">John Doe</h4>
+              <span class="comment-date">03-04-2016 04:02 AM</span>
+              <br><br>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia accusamus maiores numquam laudantium aliquam dolorum quidem nemo voluptate rem esse eveniet maxime odit pariatur placeat laboriosam dolores quod, ducimus recusandae.
+            </div>
+          </div>
+
+          <div class="media">
+              <div class="media-left">
+                  <a href="#">
+                      <img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Users-User-icon.png" alt="32x32 user image" class="media-object" style="width:32px; height:32px;">
+                  </a>
+              </div>
+              <div class="media-body">
+                <div class="pull-right">
+                  <span class="delete-comment"><i class="fas fa-times" aria-hidden="true"></i></span>
+                </div>
+                <h4 class="media-heading">John Doe</h4>
+                <span class="comment-date">03-04-2016 04:02 AM</span>
+                <br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia accusamus maiores numquam laudantium aliquam dolorum quidem nemo voluptate rem esse eveniet maxime odit pariatur placeat laboriosam dolores quod, ducimus recusandae.
+              </div>
+            </div>
+
+
+
+          
+
+            <div class="margin-top">
+              <form action="">
+                <textarea class="form-control" rows="3" placholder="Error message">
+
+                </textarea>
+                <button class="btn btn-primary pull-right margin-top">Submit</button>
+              </form>
+            </div>
+        
+        
+      </div>
+      
+      <!-- right content area  -->
+      
+
+
+    </div>
+    
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
+    <script src="//unpkg.com/@feathersjs/client@^3.0.0/dist/feathers.js"></script>
+    <script src="//unpkg.com/socket.io-client@1.7.3/dist/socket.io.js"></script>
+    
+</body>
+</html>
