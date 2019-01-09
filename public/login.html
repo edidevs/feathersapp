@@ -24,13 +24,13 @@
             <div class="col-md-2 col-md-offset-5">
                 <h3>Login to chat</h3>
                 <br/>
-                <form action="">
+                <form action="" id="login-user-form">
                         <label for="">Email</label>
-                        <input type="text" class="form-control" name="email" placeholder="Enter your email">
+                        <input id="email" type="text" class="form-control" name="email" placeholder="Enter your email">
                         <label for="">Password</label>
-                        <input type="text" class="form-control" placeholder="Enter your password...">
+                        <input id="password" type="password" class="form-control" placeholder="Enter your password...">
                         <div>
-                            <a href="#">Don't Have an account, please create one</a>
+                            <a href="/account.html">Don't Have an account, please create one</a>
                         </div>
                         <br/>
                         <input type="submit" class="btn btn-primary">
@@ -43,11 +43,17 @@
             
         </div>
     </div>
-    
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+        
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/core-js/2.1.4/core.min.js"></script>
     <script src="//unpkg.com/@feathersjs/client@^3.0.0/dist/feathers.js"></script>
     <script src="//unpkg.com/socket.io-client@1.7.3/dist/socket.io.js"></script>
     
+    <script src="./js/login.js"></script>
 </body>
 </html>

@@ -33,27 +33,37 @@ $(document).ready(function(){
         return user; //return an object 
     }
 
-    //Handle user submitting form 
-    $('#new-user-form').submit(function(e){
+    // Handle login form 
+    $('#login-user-form').submit(function(e){
         e.preventDefault();
 
         let userCredentials = getCredentials();
 
-        console.log(userCredentials);
+        console.log("User Login", userCredentials);
 
-        //create a new user using feathers client 
-
-        usersService.create(userCredentials)
-            .then((res) => {
-                console.log("Response success", res);
-                window.location.href = `${serverurl}/login.html`;
-            }).catch((err)=>{
-                console.log("Error", err);
-                $('#error-message')
-                .text(`There was an error!!!! ${err}`)
+         //Use feathers client to authenticate 
+        //If successful, redirect to chat application 
+        //If unsucessful, provide an error message to the user 
+        client.authenticate({
+            strategy: 'local',
+            email : userCredentials.email,
+            password: userCredentials.password
+        }).then(function(token){
+            //if sucessful, redirect to the serverurl
+            console.log(`Successful ${token}`); 
+            window.location.href = serverurl; 
+        }).catch((err) => {
+            console.log("Error", err); 
+            $('#error-message')
+                .text(`Error when logging in ${err.message}`)
                 .show(); 
-            });
-    }); 
+        });
+
+    });
+
+   
+
+
 
 
 });

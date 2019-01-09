@@ -5,22 +5,39 @@ module.exports = function(app) {
   }
 
   app.on('connection', connection => {
+    console.log('User connected'); 
+   
     // On a new real-time connection, add it to the anonymous channel
     app.channel('anonymous').join(connection);
   });
 
+  let userGlobal; 
+
   app.on('login', (authResult, { connection }) => {
+
+    console.log("AuthResult", authResult);
+    console.log("Connection", connection);
     // connection can be undefined if there is no
     // real-time connection, e.g. when logging in via REST
     if(connection) {
+      let { user } = connection; 
       // Obtain the logged in user from the connection
       // const user = connection.user;
+
+      userGlobal = user; 
       
       // The connection is no longer anonymous, remove it
       app.channel('anonymous').leave(connection);
 
       // Add it to the authenticated user channel
       app.channel('authenticated').join(connection);
+
+      //Handle updating user record to show they are online 
+      if(!user.isOnline){
+        app.service('users').patch( user._id, {isOnline: true});
+      }
+
+      console.log("Online ", user.isOnline);
 
       // Channels can be named anything and joined on any condition 
       
@@ -34,6 +51,22 @@ module.exports = function(app) {
       // app.channel(`emails/${user.email}`).join(channel);
       // app.channel(`userIds/$(user.id}`).join(channel);
     }
+  });
+
+  app.on('logout', (authResult, { connection }) => {
+      console.log("Check app.on logout ");
+      console.log("Logout connection ", connection); 
+      console.log("Global user", userGlobal);
+      if(connection){
+        let { user } = connection; 
+        let userLogout = userGlobal; 
+        console.log("isOnline", userLogout.isOnline);
+
+        if(userLogout.isOnline){
+          console.log("User logout !!!!!");
+          app.service('users').patch(userLogout._id, { isOnline: false });
+        }
+      }
   });
 
   // eslint-disable-next-line no-unused-vars
